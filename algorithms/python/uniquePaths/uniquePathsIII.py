@@ -40,7 +40,7 @@
 
 class Solution:
     ans = 0
-    def findPathNum(self, i, j, grid: List[List[int]], curLen, pLen)->None:
+    def findPathNum(self, i, j, grid: List[List[int]], curLen, pLen) -> None:
         if(grid[i][j]==2):
             if(pLen-1==curLen):
                 self.ans+=1
@@ -49,9 +49,9 @@ class Solution:
             return
         curLen+=1
         grid[i][j]=-1
-        if(i-1>=0):
+        if i >= 1:
             self.findPathNum(i-1, j, grid, curLen, pLen)
-        if(j-1>=0):
+        if j >= 1:
             self.findPathNum(i, j-1, grid, curLen, pLen)
         if(i+1<len(grid)):
             self.findPathNum(i+1, j, grid, curLen, pLen)

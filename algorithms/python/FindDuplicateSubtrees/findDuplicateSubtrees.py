@@ -3,7 +3,7 @@ def findDuplicateSubtrees(self, root):
     
     def helper(root):
         if not root: return 'None'
-        struct = '%s,%s,%s' % (str(root.val), helper(root.left), helper(root.right))
+        struct = f'{str(root.val)},{helper(root.left)},{helper(root.right)}'
         nodes[struct].append(root)
         return struct
     

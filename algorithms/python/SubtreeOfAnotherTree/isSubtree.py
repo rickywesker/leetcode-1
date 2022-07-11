@@ -2,8 +2,8 @@ def isSubtree(self, s, t):
     stack = [s]
     while stack:
         node = stack.pop(0)
-        if node.val == t.val:
-            if self.check(node, t): return True
+        if node.val == t.val and self.check(node, t):
+            return True
         stack += [child for child in [node.left, node.right] if child]
     return False
 

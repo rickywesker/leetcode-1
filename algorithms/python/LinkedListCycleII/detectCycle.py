@@ -4,7 +4,7 @@ def detectCycle(self, head):
         slow = slow.next
         fast = fast.next.next
         if slow == fast: break
-    
+
     if not fast or not fast.next: return None
     slow = head
     while slow != fast:

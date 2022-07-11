@@ -8,12 +8,12 @@ def copyRandomList(self, head):
     while m:
         d[m] = RandomListNode(m.label)
         m = m.next
-        
+
     while n:
         d[n].next = d.get(n.next)
         d[n].random = d.get(n.random)
         n = n.next
-        
+
     return d.get(head)
 
 # Method 2:

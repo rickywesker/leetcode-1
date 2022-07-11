@@ -9,7 +9,7 @@ def generateTrees(self, n):
         if start == end:
             ls.append(TreeNode(start))
             return ls
-        
+
         for i in range(start, end + 1):
             left = helper(start, i - 1)
             right = helper(i + 1, end)

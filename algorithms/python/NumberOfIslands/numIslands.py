@@ -4,16 +4,17 @@ def numIslands(self, grid):
     self.visited = [[False for _ in range(col)] for _ in range(row)]
     
     def floodfill(i, j):
-        if grid[i][j] == '1' and self.visited[i][j] == False:
-            self.visited[i][j] = True
-            if i > 0:
-                floodfill(i - 1, j)
-            if i < row - 1:
-                floodfill(i + 1, j)
-            if j > 0:
-                floodfill(i, j - 1)
-            if j < col - 1:
-                floodfill(i, j + 1)
+        if grid[i][j] != '1' or self.visited[i][j] != False:
+            return
+        self.visited[i][j] = True
+        if i > 0:
+            floodfill(i - 1, j)
+        if i < row - 1:
+            floodfill(i + 1, j)
+        if j > 0:
+            floodfill(i, j - 1)
+        if j < col - 1:
+            floodfill(i, j + 1)
     
     res = 0
     for i in range(row):

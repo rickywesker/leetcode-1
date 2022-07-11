@@ -3,8 +3,7 @@
 
 def printTree(self, root):
     def get_height(root):
-        if not root: return 0
-        return 1 + max(get_height(root.left), get_height(root.right))
+        return 1 + max(get_height(root.left), get_height(root.right)) if root else 0
     
     def update(res, node, row, left, right):
         if not node: return
